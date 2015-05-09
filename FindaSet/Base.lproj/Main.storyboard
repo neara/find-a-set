@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,21 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPX-tp-qI8">
-                                <rect key="frame" x="0.0" y="0.0" width="609" height="516"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="516" id="Xl5-nn-vQq"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-P2-CPN">
-                                <rect key="frame" x="16" y="556" width="101" height="30"/>
-                                <state key="normal" title="Select a Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectPhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b7y-eJ-4GB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsA-Cd-5fu">
                                 <rect key="frame" x="494" y="550" width="90" height="30"/>
                                 <state key="normal" title="Take a Photo">
@@ -41,16 +27,32 @@
                                     <action selector="takePhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eeS-Xd-ap3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-P2-CPN">
+                                <rect key="frame" x="16" y="556" width="101" height="30"/>
+                                <state key="normal" title="Select a Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b7y-eJ-4GB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPX-tp-qI8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="516"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UPX-tp-qI8" secondAttribute="height" multiplier="50:43" id="zYg-Gy-9WZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OsA-Cd-5fu" firstAttribute="trailing" secondItem="UPX-tp-qI8" secondAttribute="trailing" constant="-25" id="4f8-FK-taQ"/>
                             <constraint firstItem="OsA-Cd-5fu" firstAttribute="baseline" secondItem="iNa-P2-CPN" secondAttribute="baseline" constant="-6" id="69j-yq-mFg"/>
+                            <constraint firstItem="OsA-Cd-5fu" firstAttribute="top" secondItem="UPX-tp-qI8" secondAttribute="bottom" constant="34" id="7YM-Vx-nct"/>
+                            <constraint firstItem="UPX-tp-qI8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9VN-4p-6hg"/>
+                            <constraint firstAttribute="trailing" secondItem="UPX-tp-qI8" secondAttribute="trailing" id="BZZ-at-iEJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OsA-Cd-5fu" secondAttribute="trailing" id="FyX-78-vWG"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OsA-Cd-5fu" secondAttribute="bottom" constant="20" id="Gia-mg-lwy"/>
-                            <constraint firstItem="iNa-P2-CPN" firstAttribute="leading" secondItem="UPX-tp-qI8" secondAttribute="leading" constant="16" id="O3Q-Oo-5ph"/>
+                            <constraint firstItem="UPX-tp-qI8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Rke-Dc-FIk"/>
                             <constraint firstItem="iNa-P2-CPN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ebi-Yu-Ff0"/>
-                            <constraint firstItem="UPX-tp-qI8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="sxj-Qx-VCC"/>
                         </constraints>
                     </view>
                     <connections>
